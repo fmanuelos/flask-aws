@@ -13,6 +13,7 @@ python app.py
 ## API
 
 ```sh
+GET     /                  ->  Main Page
 GET     /list              ->  Get instances retrieved from AWS
 POST    /add               ->  Add anew AWS API keys
 {
