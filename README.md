@@ -10,7 +10,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-### API
+## API
 
 ```sh
 GET     /list              ->  Get instances retrieved from AWS

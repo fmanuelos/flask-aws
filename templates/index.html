@@ -1,10 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
 </head>
-<body>
-    <h1>test</h1>
+<body ng-app="myApp">
+    <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">AWS instances</a>
+    </div>
+  </div>
+</nav>
+  <div class="container">
+<div ng-controller="ListController">
+    <table class="table"> 
+        <caption>List of instances from AWS.</caption> 
+        <thead> <tr> <th>instance id</th> <th>instance type</th> <th>ip address</th> <th>placement</th> <th>public dns name</th> <th>state</th></tr> </thead> 
+        <tbody> 
+            <tr ng-repeat="value in data"> 
+                <td>{{ '{{ value.instance_id }}' }}</td> <td> {{ '{{ value.instance_type }}' }}</td> <td>{{ '{{ value.ip_address }}' }}</td> <td>{{ '{{ value.placement }}' }}</td> <td>{{ '{{ value.public_dns_name }}' }}</td> <td>{{ '{{ value.state }}' }}</td>
+            </tr> 
+        </tbody> 
+    </table>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
