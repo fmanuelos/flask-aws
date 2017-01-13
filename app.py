@@ -4,7 +4,7 @@ from boto import ec2
 
 app = Flask(__name__)
 
-e = create_engine('sqlite:///test.db')
+e = create_engine('sqlite:///data.db')
 
 @app.route('/', methods=['GET'])
 def template():
